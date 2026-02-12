@@ -1,0 +1,162 @@
+body {
+    background: #263c70;
+    color: white;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    margin: 0;
+}
+
+/* TOPBAR */
+.topbar {
+    background: #020617;
+    padding: 15px 25px;
+    border-bottom: 1px solid #1e293b;
+    margin-bottom: 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand img {
+    height: 36px;
+}
+
+.brand span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* FORM */
+.form, .filtro {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+input, select, button {
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+}
+
+button {
+    background: #e50914;
+    color: white;
+    cursor: pointer;
+}
+
+/* DASHBOARD */
+.dashboard {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.dashboard .card {
+    padding: 10px;
+    border-radius: 8px;
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+}
+
+.card.activo { background: #052e16; }
+.card.pronto { background: #78350f; }
+.card.vencido { background: #7f1d1d; }
+
+/* CARDS */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 18px;
+}
+
+.cliente-card {
+    background: #020617;
+    border-radius: 16px;
+    padding: 18px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,.5);
+    transition: transform .2s;
+}
+
+.cliente-card:hover {
+    transform: translateY(-4px);
+}
+
+.cliente-card h3 {
+    margin: 0;
+}
+
+.usuario {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.info {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* ESTADO */
+.estado {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.estado.activo { background: #22c55e; color: #022c22; }
+.estado.pronto { background: #facc15; color: #422006; }
+.estado.vencido { background: #ef4444; }
+
+/* ACCIONES */
+.card-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.card-actions button {
+    flex: 1;
+    font-size: 13px;
+}
+
+.btn-wsp {
+    background: #22c55e;
+    color: #022c22;
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-contenido {
+    background: #020617;
+    padding: 20px;
+    border-radius: 10px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal-acciones {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}

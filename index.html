@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Clientes TV Digital</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+    <div class="brand">
+        <img src="./logotododigital.png" alt="TV Digital">
+        <span>TV Digital · Panel de Clientes</span>
+    </div>
+</header>
+
+<h1>📺 Gestión Clientes TV Digital</h1>
+
+<div class="form">
+    <input id="nombre" placeholder="Nombre y Apellido">
+    <input id="usuario" placeholder="Usuario">
+    <input type="date" id="vencimiento">
+    <select id="plataforma">
+        <option value="">Nebula TV</option>
+        <option>Mundo Infinito</option>
+        <option>Caelum</option>
+        <option>IPTV</option>
+    </select>
+    <button onclick="guardarCliente()">Guardar</button>
+</div>
+
+<div class="filtro">
+    <select id="filtroPlataforma" onchange="cargarClientes()">
+        <option value="">Todas las plataformas</option>
+        <option>Nebula TV</option>
+        <option>Mundo Infinito</option>
+        <option>Caelum</option>
+        <option>IPTV</option>
+    </select>
+</div>
+
+<div class="dashboard">
+    <div class="card activo">🟢 Activos: <span id="countActivos">0</span></div>
+    <div class="card pronto">🟡 Por vencer: <span id="countPronto">0</span></div>
+    <div class="card vencido">🔴 Vencidos: <span id="countVencidos">0</span></div>
+</div>
+
+<!-- CARDS -->
+<div id="cardsClientes" class="cards-container"></div>
+
+<!-- MODAL EDICIÓN -->
+<div id="modalEditar" class="modal">
+    <div class="modal-contenido">
+        <h2>✏️ Editar Cliente</h2>
+
+        <input id="editNombre" placeholder="Nombre y Apellido">
+        <input id="editUsuario" placeholder="Usuario">
+        <input type="date" id="editVencimiento">
+        <select id="editPlataforma">
+            <option>Nebula TV</option>
+            <option>Mundo Infinito</option>
+            <option>Caelum</option>
+            <option>IPTV</option>
+        </select>
+
+        <div class="modal-acciones">
+            <button onclick="sumar30Dias()">➕ 30 días</button>
+            <button onclick="guardarEdicion()">💾 Guardar</button>
+            <button onclick="eliminarCliente()">🗑 Eliminar</button>
+            <button onclick="cerrarModal()">❌ Cancelar</button>
+        </div>
+    </div>
+</div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
